@@ -157,15 +157,15 @@ News-Summarizer/
 
    Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-   Fork the project
+   1. Fork the project
 
-   Create your feature branch (git checkout -b feature/AmazingFeature)
+   2. Create your feature branch (git checkout -b feature/AmazingFeature)
 
-   Commit your changes (git commit -m 'Add some AmazingFeature')
+   3. Commit your changes (git commit -m 'Add some AmazingFeature')
 
-   Push to the branch (git push origin feature/AmazingFeature)
+   4. Push to the branch (git push origin feature/AmazingFeature)
 
-   Open a Pull Request
+   5. Open a Pull Request
   
 
 ## 📝 License
@@ -174,13 +174,10 @@ News-Summarizer/
 
 ## 🙏 Acknowledgments
  
-  Groq for providing powerful AI inference capabilities
-
-  NewsData.io for news API services
-
-  Render for deployment platform
-
-  Tailwind CSS for styling framework
+  - [Groq](https://groq.com/) for providing powerful AI inference capabilities
+- [NewsData.io](https://newsdata.io/) for news API services
+- [Render](https://render.com/) for deployment platform
+- [Tailwind CSS](https://tailwindcss.com/) for styling framework
 
 
 ## ⭐ Star this repo if you found it helpful!
