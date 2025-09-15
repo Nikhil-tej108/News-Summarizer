@@ -395,16 +395,13 @@ def summarize():
         if not article_url:
             return jsonify({"error": "No article URL provided"}), 400
 
-        # Check if Groq API key is available
         if not GROQ_API_KEY:
             error_msg = "Groq API key is not configured. Please check your environment variables."
             print(f"❌ {error_msg}")
             return jsonify({"error": error_msg}), 500
 
-        # Fetch full article content
         full_article_text = fetch_full_article(article_url)
         
-        # Use full article if available, otherwise fall back to preview
         text_to_summarize = full_article_text if full_article_text else preview_text
         
         if not text_to_summarize or not text_to_summarize.strip():
@@ -412,17 +409,12 @@ def summarize():
             print(f"❌ {error_msg}")
             return jsonify({"error": error_msg}), 400
 
-        print(f"📄 Text to summarize: {len(text_to_summarize)} characters")
-        
-        # If we only have preview text, add a note to the summary
         summary_prefix = ""
         if not full_article_text:
             summary_prefix = "⚠️ Note: Full article content was unavailable. This summary is based on the preview text only.\n\n"
         
-        # Summarize and analyze sentiment
         summary = summarize_text(text_to_summarize, title)
         
-        # Fallback if AI summarization fails
         if not summary or "⚠️ AI summary unavailable" in summary:
             print("⚠️ AI summarization failed, using enhanced fallback summary")
             # Create a more detailed fallback summary
@@ -463,8 +455,8 @@ def health_check():
     })
 
 if __name__ == "__main__":
-    print("🚀 Starting Flask server...")
-    print("📍 Visit http://localhost:5000 to access the application")
-    print("📍 Test Groq API at http://localhost:5000/test_groq")
-    print("📍 Health check at http://localhost:5000/health")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print("Visit http://localhost:5000 to access the application")
+    print(" Test Groq API at http://localhost:5000/test_groq")
+    print(" Health check at http://localhost:5000/health")
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
