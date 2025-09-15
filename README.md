@@ -183,4 +183,4 @@ News-Summarizer/
   Tailwind CSS for styling framework
 
 
-⭐ Star this repo if you found it helpful!
+## ⭐ Star this repo if you found it helpful!
